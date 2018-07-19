@@ -5,7 +5,10 @@ html(class="no-js", lang="ru")
     include ../components/example/example.pug
     include ../components/footer/footer.pug
     include ../components/header/header.pug
-    include ../components/content/content.pug
+    //- include ../components/content/content.pug
+    include ../components/mobile-main/mobile-main.pug
+    include ../components/main-top-m/main-top-m.pug
+    include ../components/drop-wrap-m/drop-wrap-m.pug
 
     head
         +head(head.defaults)
@@ -17,7 +20,10 @@ html(class="no-js", lang="ru")
             //- Include your components here
             //- +example()
             header
-            content
+            //- content
+            mobile-main
+                main-top-m
+                drop-wrap-m
             .page__buffer
 
         .page__footer

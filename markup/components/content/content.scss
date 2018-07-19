@@ -1,6 +1,6 @@
 .main-top {
-    border-bottom: 1px solid rgb(202, 202, 202);
-    width: 100%;
+    border-bottom: 1px solid $mTopBord;
+    width: $fullScrW;
 }
 .main-top__title-wrap {
     justify-content: space-around;
@@ -10,7 +10,7 @@
     margin-bottom: 10px;
 }
 .main-top__search-form {
-    border: 1px solid rgb(189, 186, 186);
+    border: 1px solid $mTopSForm;
     width: 75vw;
     border-radius: 1px;
 }
@@ -23,7 +23,7 @@
     margin-right: 5px;
 }
 .main-top__tab-block {
-    width: 100%;
+    width: $fullScrW;
 }
 .main-top__tab-button {
     font-size: .95rem;
@@ -48,7 +48,7 @@
 .drop-wrap__slide-wrap {
     justify-content: center;
     position: relative;
-    width: 100%;
+    width: $fullScrW;
     height: 33vh;
     overflow: hidden;
 }
@@ -79,19 +79,19 @@
     position: absolute;
     top: 6.5vh;
     left:0%;
-    width: 100%;
+    width: $fullScrW;
 }
 .drop-wrap__control-block-button {
     padding: 10px;
     font-size: 3.7rem;
-    color: rgba(255, 255, 255, .85);
-    background:rgba(66, 65, 65, .3);
+    color: $ctrlBtn;
+    background: $ctrlBtnBack;
 }
 .drop-wrap__tab-dummy-txt {
     background: lightblue;
 }
 .first-dummy-txt {
-    background: rgb(122, 165, 122);
+    background: $frDTxt;
 }
 .second-drop-block-mobile, .third-drop-block-mobile, .desktop-main-wrap {
     display: none;
@@ -169,7 +169,7 @@
         padding: 20px 10px;
         font-size: 9rem;
         margin: 0 4vw;
-        background:rgba(66, 65, 65, .4);
+        background: $ctrlBtnD;
         border-radius: 2px;
         line-height: 1;
     }

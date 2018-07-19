@@ -1,2 +1,23 @@
 // File for scss-vars.
 // For example: main colors, paddings and so on.
+
+// Color vars
+// header colors
+$mainBlue: rgb(11, 77, 161);
+$grayBack: rgb(238, 238, 238);
+$grayBord: rgb(190, 187, 187);
+$navBord: rgb(218, 218, 218);
+$regVal: rgb(42, 102, 42);
+$regValBack:rgb(136, 168, 179);
+$regInval: rgb(148, 7, 7);
+$regInvalBack: rgb(128, 119, 119);
+$confRed: rgb(224, 38, 38);
+// content colors
+$mTopBord:rgb(202, 202, 202);
+$mTopSForm:rgb(189, 186, 186);
+$ctrlBtn: rgba(255, 255, 255, .85);
+$ctrlBtnBack: rgba(66, 65, 65, .3);
+$frDTxt: rgb(122, 165, 122);
+$ctrlBtnD: rgba(66, 65, 65, .4);
+// width vars
+$fullScrW: 100%;
