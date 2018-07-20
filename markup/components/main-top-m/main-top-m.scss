@@ -1,0 +1,44 @@
+.main-top {
+    border-bottom: 1px solid $mTopBord;
+    width: $fullScrW;
+}
+.main-top__title-wrap {
+    justify-content: space-around;
+}
+.main-top__search-block {
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.main-top__search-form {
+    border: 1px solid $mTopSForm;
+    width: 75vw;
+    border-radius: 1px;
+}
+.main-top__search-input {
+    border: none;
+    height: 32px;
+    text-indent: 5px;
+}
+.main-top__search-span {
+    margin-right: 5px;
+}
+.main-top__tab-block {
+    width: $fullScrW;
+}
+.main-top__tab-button {
+    font-size: .95rem;
+    padding: 10px 5px 10px;
+    border-top: 2px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 1px solid transparent;
+}
+.active-tab-button {
+    color: red;
+    border-top: 2px solid red;
+    border-right: 1px solid lightgrey;
+    border-bottom: 2px solid white;
+    border-left: 1px solid lightgray;
+    margin-bottom: -1px;
+    padding-bottom: 11px;
+}

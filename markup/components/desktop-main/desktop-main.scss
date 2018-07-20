@@ -1,0 +1,9 @@
+.desktop-main-wrap {
+    display: none;
+}
+
+@media all and (min-width: 1000px) {
+    .desktop-main-wrap {
+        display: block;
+    }
+}
