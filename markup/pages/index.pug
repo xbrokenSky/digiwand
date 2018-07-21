@@ -5,14 +5,14 @@ html(class="no-js", lang="ru")
     include ../components/example/example.pug
     include ../components/footer/footer.pug
     include ../components/header/header.pug
-    //- include ../components/content/content.pug
-    include ../components/main-content/main-content.pug
-    include ../components/mobile-main/mobile-main.pug
-    include ../components/main-top-m/main-top-m.pug
-    include ../components/drop-wrap-m/drop-wrap-m.pug
-    include ../components/desktop-main/desktop-main.pug
-    include ../components/main-top-d/main-top-d.pug
-    include ../components/drop-wrap-d/drop-wrap-d.pug
+    include ../components/content/content.pug
+    //- include ../components/main-content/main-content.pug
+    //- include ../components/mobile-main/mobile-main.pug
+    //- include ../components/main-top-m/main-top-m.pug
+    //- include ../components/drop-wrap-m/drop-wrap-m.pug
+    //- include ../components/desktop-main/desktop-main.pug
+    //- include ../components/main-top-d/main-top-d.pug
+    //- include ../components/drop-wrap-d/drop-wrap-d.pug
     head
         +head(head.defaults)
     body.page
@@ -23,14 +23,14 @@ html(class="no-js", lang="ru")
             //- Include your components here
             //- +example()
             header
-            //- content
-            main-content
-                mobile-main
-                    main-top-m
-                    drop-wrap-m
-                desktop-main
-                    main-top-d
-                    drop-wrap-d
+            content
+            //- main-content
+            //-     mobile-main
+            //-         main-top-m
+            //-         drop-wrap-m
+            //-     desktop-main
+            //-         main-top-d
+            //-         drop-wrap-d
             .page__buffer
 
         .page__footer
