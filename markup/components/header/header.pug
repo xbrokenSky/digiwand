@@ -34,11 +34,11 @@ mixin navi-li(href, txt)
                     +e.FORM#header__reg-form-mobile(action='#' method='POST').reg-form
                         +e.input-block.flex-between
                             +e.LABEL(for='header__reg-mail-mobile').reg-label EMAIL:
-                            +e.INPUT#header__reg-mail-mobile(type='email' form='header__reg-form-mobile' name='mail' placeholder='Введите ваш email').reg-input
+                            +e.INPUT#header__reg-mail-mobile(type='email' form='header__reg-form-mobile' name='mail' placeholder='Введите ваш email' required).reg-input
                             +e.P#header__mail-msg-mobile.input-msg
                         +e.input-block.flex-between
                             +e.LABEL(for='header__reg-pass-mobile').reg-label Password:
-                            +e.INPUT#header__reg-pass-mobile(type='password' form='header__reg-form-mobile' name='password' placeholder='Введите ваш пароль').reg-input
+                            +e.INPUT#header__reg-pass-mobile(type='password' form='header__reg-form-mobile' name='password' placeholder='Введите ваш пароль' required).reg-input
                             +e.P#header__pass-masg-mobile.input-msg
                         +e.BUTTON#header__reg-confirm-mobile.reg-confirm Войти
 
@@ -62,10 +62,10 @@ mixin navi-li(href, txt)
                     +e.FORM#header__reg-form-desktop(action='#' method='POST').reg-form
                         +e.input-block.flex-between
                             +e.LABEL(for='header__reg-mail-mobile').reg-label EMAIL:
-                            +e.INPUT#header__reg-mail-desktop(type='email' form='header__reg-form-desktop' name='mail' placeholder='Введите ваш email').reg-input
+                            +e.INPUT#header__reg-mail-desktop(type='email' form='header__reg-form-desktop' name='mail' placeholder='Введите ваш email' required).reg-input
                             +e.P#header__mail-msg-desktop.input-msg
                         +e.input-block.flex-between
                             +e.LABEL(for='header__reg-pass-mobile').reg-label Password:
-                            +e.INPUT#header__reg-pass-desktop(type='password' form='header__reg-form-desktop' name='password' placeholder='Введите ваш пароль').reg-input
+                            +e.INPUT#header__reg-pass-desktop(type='password' form='header__reg-form-desktop' name='password' placeholder='Введите ваш пароль' required).reg-input
                             +e.P#header__pass-masg-desktop.input-msg
                         +e.BUTTON#header__reg-confirm-desktop.reg-confirm Войти

@@ -24,30 +24,89 @@ regButtonMobile.onclick = function(e) {
     return false;
 };
 
-regConfirmBtnMobile.onclick = function(e) {
-    e.stopPropagation();
-    var mail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    var pass =/^[a-zA-Z0-9-+~@()!|{}]+$/;
-    if (regMailInputMobile.value.length < 8 || !mail.test(regMailInputMobile.value)) {
-        regMailMsgMobile.innerText = 'Недопустимая длина или название ящика';
-        regMailMsgMobile.classList.add('reg-invalid');
-        regMailMsgMobile.classList.remove('reg-valid');
-    } else {
-        regMailMsgMobile.innerText = 'Почтовый ящик указан верно';
-        regMailMsgMobile.classList.add('reg-valid');
-        regMailMsgMobile.classList.remove('reg-invalid');
-    }
-    if (regPassInputMobile.value.length < 8 || !pass.test(box.regPassInputMobile.value)) {
-        regPassMsgMobile.innerText = 'Недопустимая длина или символы пароля';
-        regPassMsgMobile.classList.add('reg-invalid');
-        regPassMsgMobile.classList.remove('reg-valid');
-    } else {
-        regPassMsgMobile.innerText = 'Пароль указан верно';
-        regPassMsgMobile.classList.add('reg-valid');
-        regPassMsgMobile.classList.remove('reg-invalid');
-    }
-    return false;
-};
+$(document).ready(function() {
+    $('#header__reg-form-mobile').validate({
+        rules: {
+            mail: {
+                required: true,
+                minlength: 5,
+                maxlength: 16,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 8,
+                maxlength: 16,
+            }
+        },
+        messages: {
+            mail: {
+                required: "Это поле обязательно для заполнения",
+                minlength: "Логин должен быть минимум 5 символов",
+                maxlength: "Максимальное число символов - 16",
+                email: "Введите корректный адрес электронной почты"
+            },
+            password: {
+                required: "Это поле обязательно для заполнения",
+                minlength: "Логин должен быть минимум 8 символов",
+                maxlength: "Максимальное число символов - 16",
+            }
+        }
+    });
+    $('#header__reg-form-desktop').validate({
+        rules: {
+            mail: {
+                required: true,
+                minlength: 5,
+                maxlength: 16,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 8,
+                maxlength: 16,
+            }
+        },
+        messages: {
+            mail: {
+                required: "Это поле обязательно для заполнения",
+                minlength: "Логин должен быть минимум 5 символов",
+                maxlength: "Максимальное число символов - 16",
+                email: "Введите корректный адрес электронной почты"
+            },
+            password: {
+                required: "Это поле обязательно для заполнения",
+                minlength: "Логин должен быть минимум 8 символов",
+                maxlength: "Максимальное число символов - 16",
+            }
+        }
+    });
+});
+
+// regConfirmBtnMobile.onclick = function(e) {
+//     e.stopPropagation();
+//     var mail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+//     var pass =/^[a-zA-Z0-9-+~@()!|{}]+$/;
+//     if (regMailInputMobile.value.length < 8 || !mail.test(regMailInputMobile.value)) {
+//         regMailMsgMobile.innerText = 'Недопустимая длина или название ящика';
+//         regMailMsgMobile.classList.add('reg-invalid');
+//         regMailMsgMobile.classList.remove('reg-valid');
+//     } else {
+//         regMailMsgMobile.innerText = 'Почтовый ящик указан верно';
+//         regMailMsgMobile.classList.add('reg-valid');
+//         regMailMsgMobile.classList.remove('reg-invalid');
+//     }
+//     if (regPassInputMobile.value.length < 8 || !pass.test(box.regPassInputMobile.value)) {
+//         regPassMsgMobile.innerText = 'Недопустимая длина или символы пароля';
+//         regPassMsgMobile.classList.add('reg-invalid');
+//         regPassMsgMobile.classList.remove('reg-valid');
+//     } else {
+//         regPassMsgMobile.innerText = 'Пароль указан верно';
+//         regPassMsgMobile.classList.add('reg-valid');
+//         regPassMsgMobile.classList.remove('reg-invalid');
+//     }
+//     return false;
+// };
 
 // ------------------------------------------------desktop UI logic starts up here
 
@@ -72,27 +131,27 @@ regButtonDesktop.onclick = function(e) {
     return false;
 };
 
-regConfirmBtnDesktop.onclick = function(e) {
-    e.stopPropagation();
-    var mail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    var pass =/^[a-zA-Z0-9-+~@()!|{}]+$/;
-    if (regMailInputDesktop.value.length < 8 || !mail.test(regMailInputDesktop.value)) {
-        regMailMsgDesktop.innerText = 'Недопустимая длина или название ящика';
-        regMailMsgDesktop.classList.add('reg-invalid');
-        regMailMsgDesktop.classList.remove('reg-valid');
-    } else {
-        regMailMsgDesktop.innerText = 'Почтовый ящик указан верно';
-        regMailMsgDesktop.classList.add('reg-valid');
-        regMailMsgDesktop.classList.remove('reg-invalid');
-    }
-    if (regPassInputDesktop.value.length < 8 || !pass.test(desk.regPassInputDesktop.value)) {
-        regPassMsgDesktop.innerText = 'Недопустимая длина или символы пароля';
-        regPassMsgDesktop.classList.add('reg-invalid');
-        regPassMsgDesktop.classList.remove('reg-valid');
-    } else {
-        regPassMsgDesktop.innerText = 'Пароль указан верно';
-        regPassMsgDesktop.classList.add('reg-valid');
-        regPassMsgDesktop.classList.remove('reg-invalid');
-    }
-    return false;
-};
+// regConfirmBtnDesktop.onclick = function(e) {
+//     e.stopPropagation();
+//     var mail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+//     var pass =/^[a-zA-Z0-9-+~@()!|{}]+$/;
+//     if (regMailInputDesktop.value.length < 8 || !mail.test(regMailInputDesktop.value)) {
+//         regMailMsgDesktop.innerText = 'Недопустимая длина или название ящика';
+//         regMailMsgDesktop.classList.add('reg-invalid');
+//         regMailMsgDesktop.classList.remove('reg-valid');
+//     } else {
+//         regMailMsgDesktop.innerText = 'Почтовый ящик указан верно';
+//         regMailMsgDesktop.classList.add('reg-valid');
+//         regMailMsgDesktop.classList.remove('reg-invalid');
+//     }
+//     if (regPassInputDesktop.value.length < 8 || !pass.test(desk.regPassInputDesktop.value)) {
+//         regPassMsgDesktop.innerText = 'Недопустимая длина или символы пароля';
+//         regPassMsgDesktop.classList.add('reg-invalid');
+//         regPassMsgDesktop.classList.remove('reg-valid');
+//     } else {
+//         regPassMsgDesktop.innerText = 'Пароль указан верно';
+//         regPassMsgDesktop.classList.add('reg-valid');
+//         regPassMsgDesktop.classList.remove('reg-invalid');
+//     }
+//     return false;
+// };

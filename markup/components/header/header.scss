@@ -1,3 +1,7 @@
+.error {
+    color: red;
+}
+
 .header {
     background: $grayBack;
     width: $fullScrW;
@@ -37,6 +41,7 @@
     padding: 10px;
     border-radius: 1px;
     z-index: 1;
+    transition: top 250ms;
 }
 .reg-block__input-block {
     flex-flow: column nowrap;
