@@ -1,0 +1,13 @@
+include ../../../bemto/bemto.pug
+mixin navi-li(href, txt) 
+    +e.LI.link-item
+        block
+        +e.A(href=href).list-link= txt 
+//- ----------------------------------------actual pug starting up here
++b.NAV.nav
+    +e.UL.link-list.flex-between
+        +navi-li('#', 'USA site')
+        +navi-li('#', 'Deutch site')
+        +e.LI.link-item.flex-between
+            +e.SPAN.list-txt Россия:
+            +e.A(href='#').list-link Switch to english

@@ -1,0 +1,10 @@
+.header {
+    background: $grayBack;
+    width: $fullScrW;
+    height: 63px;
+    @media all and (min-width: 1000px) {
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+}

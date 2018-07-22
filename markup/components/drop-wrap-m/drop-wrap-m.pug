@@ -1,0 +1,30 @@
+include ../../../bemto/bemto.pug
+mixin slide(src)
+    +e.LI.slide
+        +e.IMG.slide-img(src=src alt='slide img')
+//- --------------------------------actual pug starting up here
++b.drop-wrap
+    +e#drop-wrap__tab-drob-block-f-mobile.tab-drop-block
+        +e#banner-m.slide-wrap.banner
+            +e#move-m.slider.move
+                +e.UL.slider-list
+                    +slide('../static/img/general/slide-one.png')
+                    +slide('../static/img/general/slide-two.jpg')
+                    +slide('../static/img/general/slide-three.jpg')
+            +e#ctrl-m.slider-ctrl.ctrl
+    +e#drop-wrap__tab-drob-block-s-mobile.tab-drop-block.second-drop-block
+        +e.P.tab-dummy-txt.first-dummy-txt  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia excepturi enim nesciunt nihil error praesentium quam doloribus dolorem qui rem voluptas non perferendis ipsa expedita saepe sunt quisquam, reprehenderit suscipit.
+    +e#drop-wrap__tab-drob-block-t-mobile.tab-drop-block.third-drop-block
+        +e.P.tab-dummy-txt Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia excepturi enim nesciunt nihil error praesentium quam doloribus dolorem qui rem voluptas non perferendis ipsa expedita saepe sunt quisquam, reprehenderit suscipit.
+
+
+
+
+
+
+
+
+
+
+
+

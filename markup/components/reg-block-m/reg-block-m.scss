@@ -1,0 +1,61 @@
+.reg-block__reg-button {
+    @media all and (min-width: 1000px) {
+        margin-right: 0;
+    }  
+}
+.reg-block__reg-drop-block {
+    position: absolute;
+    top: calc(.5px - (186px + 63.5px));
+    left: 10%;
+    right: 10%;
+    background: $grayBack;
+    padding: 10px;
+    border-radius: 1px;
+    z-index: 1;
+    transition: top 250ms;
+    @media all and (min-width: 1000px) {
+        left: 68%;
+        right: 12%;
+    }
+}
+.reg-block__input-block {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    position: relative;
+}
+.reg-block__input-block:not(:last-of-type) {
+    margin-bottom: 5px;
+}
+.reg-block__reg-label {
+    color: $mainBlue;
+    font-size: 14px;
+}
+.reg-block__reg-input {
+    border: 1px solid $grayBord;
+    border-radius: 2px;
+    width: 99%;
+    height: 30px;
+    text-indent: 3px;
+}
+.reg-block__input-msg {
+    font-size: 14px;
+    margin-top: 3px;
+}
+.reg-valid {
+    color: $regVal;
+    background: $regValBack;
+}
+.reg-invalid {
+    color: $regInval;
+    background: $regInvalBack;
+}
+.reg-block__reg-confirm {
+    width: 61px;
+    margin: 10px 0 0 auto;
+    border: 1px solid $grayBord;
+    padding: 7px;
+    color: $confRed;
+}
+.error {
+    color: red;
+}

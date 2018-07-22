@@ -1,0 +1,15 @@
+include ../../../bemto/bemto.pug
+//- ---------------------------------------actual pug starting up here
++b.reg-block
+    +e.BUTTON#header__reg-button-desktop.reg-button.nav__list-link Вход и регистрация
+    +e#header__reg-drop-block-desktop.reg-drop-block
+        +e.FORM#header__reg-form-desktop(action='#' method='POST').reg-form
+            +e.input-block.flex-between
+                +e.LABEL(for='header__reg-mail-desktop').reg-label EMAIL:
+                +e.INPUT#header__reg-mail-desktop(type='email' form='header__reg-form-desktop' name='mail' placeholder='Введите ваш email' required).reg-input
+                +e.P#header__mail-msg-desktop.input-msg
+            +e.input-block.flex-between
+                +e.LABEL(for='header__reg-pass-desktop').reg-label Password:
+                +e.INPUT#header__reg-pass-desktop(type='password' form='header__reg-form-desktop' name='password' placeholder='Введите ваш пароль' required).reg-input
+                +e.P#header__pass-masg-desktop.input-msg
+            +e.BUTTON#header__reg-confirm-desktop.reg-confirm Войти

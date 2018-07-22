@@ -1,0 +1,6 @@
+.mobile-header-wrap {
+    flex-flow: row wrap;
+    @media all and (min-width: 1000px) {
+        display: none;
+    }
+}

@@ -1,0 +1,18 @@
+include ../../../bemto/bemto.pug
+mixin tab(id, txt)
+    +e.BUTTON(id!=id).tab-button= txt
+//- --------------------------------------------------actual pug starting up here
++b.main-top.flex-between
+    +e.title-wrap.flex-between 
+        +e.A(href='#').title-link
+            +e.IMG(src='../../static/img/general/trans-logo.png' alt='company logo').title-img
+    +e.tab-block.flex-between
+        +e.BUTTON#main-top__tab-button-f-desktop.tab-button.active-tab-button Возможности
+        +tab('main-top__tab-button-s-desktop', 'Информация')
+        +tab('main-top__tab-button-t-desktop', 'Привелегии')
+    +e.search-block.flex-between
+        +e.FORM(action='#' method='GET' target='_blank')#main-top__search-form-desktop.search-form.flex-between
+            +e.INPUT(type='search' form='main-top__search-form-desktop' name='search' placeholder='поиск по сайту').search-input
+            +e.SPAN.search-span
+                +e.SVG(width='19px' height='19px')
+                    +e.USE(href='#main-top__search-icon')

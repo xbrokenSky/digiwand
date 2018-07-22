@@ -1,0 +1,33 @@
+.nav {
+    border-bottom: 1px solid $navBord;
+    @media all and (min-width: 1000px) {
+        border-bottom: none;
+        margin-right: calc((100vw - 696px) / 2);
+    }
+}
+.nav__link-item:last-child {
+    justify-content: center;
+}
+.nav__link-item:last-child a {
+    @media all and (min-width: 1000px) {
+        padding-left: 2px;
+    }   
+}
+.nav__list-link,.nav__list-txt {
+    font: {
+        weight: 600;
+        size: 13px;
+    }     
+    color: $mainBlue;
+    display: block;
+    padding: 7px 5px;
+}
+.nav__list-txt {
+    color: black;
+    padding:0;
+}
+.nav__list-link {
+    @media all and (min-width: 1000px) {
+        margin-right: 30px;
+    } 
+}
