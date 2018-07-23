@@ -3,17 +3,9 @@ var regDropBlockDesktop = o('header__reg-drop-block-desktop');
 var regDropStateDesktop = false;
 var regConfirmBtnDesktop = o('header__reg-confirm-desktop');
 
-regButtonDesktop.onclick = function(e) {
-    e.stopPropagation();
-    if(!regDropStateDesktop) {
-        regDropBlockDesktop.style.top = '45px';
-        regDropStateDesktop = true;
-    } else {
-        regDropBlockDesktop.style.top = '';
-        regDropStateDesktop = false;
-    }
-    return false;
-};
+$(regButtonDesktop).click(function() {
+    $('[data-remodal-id=modal]').remodal().open();
+});
 
 $(regConfirmBtnDesktop).click(function() {
     $('#header__reg-form-desktop').validate({

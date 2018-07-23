@@ -15,7 +15,7 @@
 }
 .drop-wrap__slide-img {
     width: 100vw;
-    height: 50vh;
+    height: 43vh;
     @media all and (min-width: 1000px) {
         width: $mainW;
         height: $mainH;
@@ -24,7 +24,7 @@
 .ctrl {
     position: absolute;
     width: $fullScrW;
-    bottom: 24vh;
+    bottom: 27.5vh;
     text-align: center;
     @media all and (min-width: 1000px) {
         bottom: 50%;

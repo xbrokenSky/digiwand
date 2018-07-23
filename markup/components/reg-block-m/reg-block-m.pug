@@ -3,7 +3,7 @@ include ../../../bemto/bemto.pug
 mixin reg-block-m()
     +b.reg-block
         +e.BUTTON#header__reg-button-mobile.reg-button.nav__list-link Вход и регистрация
-        +e#header__reg-drop-block-mobile.reg-drop-block
+        +e#header__reg-drop-block-mobile.reg-drop-block(data-remodal-id='modal')
             +e.FORM#header__reg-form-mobile(action='#' method='POST').reg-form
                 +e.input-block.flex-between
                     +e.LABEL(for='header__reg-mail-mobile').reg-label EMAIL:

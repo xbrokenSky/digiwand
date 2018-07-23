@@ -7,17 +7,9 @@ var regDropBlockMobile = o('header__reg-drop-block-mobile');
 var regDropStateMobile = false;
 var regConfirmBtnMobile = o('header__reg-confirm-mobile');
 
-regButtonMobile.onclick = function(e) {
-    e.stopPropagation();
-    if(!regDropStateMobile) {
-        regDropBlockMobile.style.top = '63.5px';
-        regDropStateMobile = true;
-    } else {
-        regDropBlockMobile.style.top = '';
-        regDropStateMobile = false;
-    }
-    return false;
-};
+$(regButtonMobile).click(function() {
+    $('[data-remodal-id=modal]').remodal().open();
+});
 
 $(regConfirmBtnMobile).click(function() {
     $('#header__reg-form-mobile').validate({
