@@ -1,2 +1,6 @@
 include ../../../bemto/bemto.pug
-+b.HEADER.header
+mixin header-content()
+    +b.HEADER.header
+        +mobile-header()
+        +desktop-header()
+        

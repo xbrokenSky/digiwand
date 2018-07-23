@@ -1,7 +1,8 @@
 include ../../../bemto/bemto.pug
 //- -------------------------------actual pug starting up here
-+b.score-block.flex-between
-    +e.SPAN.score-svg-wrap
-        +e.SVG(width='20px' height='20px')
-            +e.USE(href='#clock-icon')
-    +e.A(href='#').score-link.nav__list-link Онлайн Табло
+mixin score-block-d()
+    +b.score-block.flex-between
+        +e.SPAN.score-svg-wrap
+            +e.SVG(width='20px' height='20px')
+                +e.USE(href='#clock-icon')
+        +e.A(href='#').score-link.nav__list-link Онлайн Табло

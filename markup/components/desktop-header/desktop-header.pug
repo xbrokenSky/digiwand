@@ -1,2 +1,5 @@
 include ../../../bemto/bemto.pug
-+b#desktop-header-wrap.desktop-header-wrap.flex-between
+mixin desktop-header()
+    +b#desktop-header-wrap.desktop-header-wrap.flex-between
+        +nav-d()
+        +info-block-d()

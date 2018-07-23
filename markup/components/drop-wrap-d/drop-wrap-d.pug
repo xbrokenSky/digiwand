@@ -3,16 +3,17 @@ mixin slide(src)
     +e.LI.slide
         +e.IMG.slide-img(src=src alt='slide img')
 //- --------------------------------------actual pug starting up here
-+b.drop-wrap
-    +e#drop-wrap__tab-drob-block-f-desktop.tab-drop-block
-        +e#banner-d.slide-wrap.banner
-            +e#move-d.slider.move
-                +e.UL.slider-list
-                    +slide('../static/img/general/slide-one.png')
-                    +slide('../static/img/general/slide-two.jpg')
-                    +slide('../static/img/general/slide-three.jpg')
-            +e#ctrl-d.slider-ctrl.ctrl
-    +e#drop-wrap__tab-drob-block-s-desktop.tab-drop-block.second-drop-block
-        +e.P.tab-dummy-txt.first-dummy-txt  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia excepturi enim nesciunt nihil error praesentium quam doloribus dolorem qui rem voluptas non perferendis ipsa expedita saepe sunt quisquam, reprehenderit suscipit.
-    +e#drop-wrap__tab-drob-block-t-desktop.tab-drop-block.third-drop-block
-        +e.P.tab-dummy-txt Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia excepturi enim nesciunt nihil error praesentium quam doloribus dolorem qui rem voluptas non perferendis ipsa expedita saepe sunt quisquam, reprehenderit suscipit.
+mixin drop-wrap-d()
+    +b.drop-wrap
+        +e#drop-wrap__tab-drob-block-f-desktop.tab-drop-block
+            +e#banner-d.slide-wrap.banner
+                +e#move-d.slider.move
+                    +e.UL.slider-list
+                        +slide('../static/img/general/slide-one.png')
+                        +slide('../static/img/general/slide-two.jpg')
+                        +slide('../static/img/general/slide-three.jpg')
+                +e#ctrl-d.slider-ctrl.ctrl
+        +e#drop-wrap__tab-drob-block-s-desktop.tab-drop-block.second-drop-block
+            +e.P.tab-dummy-txt.first-dummy-txt  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia excepturi enim nesciunt nihil error praesentium quam doloribus dolorem qui rem voluptas non perferendis ipsa expedita saepe sunt quisquam, reprehenderit suscipit.
+        +e#drop-wrap__tab-drob-block-t-desktop.tab-drop-block.third-drop-block
+            +e.P.tab-dummy-txt Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia excepturi enim nesciunt nihil error praesentium quam doloribus dolorem qui rem voluptas non perferendis ipsa expedita saepe sunt quisquam, reprehenderit suscipit.

@@ -1,17 +1,17 @@
 doctype html
 html(class="no-js", lang="ru")
-
     include ../components/head/head.pug
     include ../components/example/example.pug
     include ../components/footer/footer.pug
     include ../components/header-content/header-content.pug
     include ../components/mobile-header/mobile-header.pug
     include ../components/nav-m/nav-m.pug
-    include ../components/info-block/info-block.pug
+    include ../components/info-block-m/info-block-m.pug
     include ../components/score-block-m/score-block-m.pug
     include ../components/reg-block-m/reg-block-m.pug
-    include ../components/desktop-header/desktop-header-pug
+    include ../components/desktop-header/desktop-header.pug
     include ../components/nav-d/nav-d.pug
+    include ../components/info-block-d/info-block-d.pug
     include ../components/score-block-d/score-block-d.pug
     include ../components/reg-block-d/reg-block-d.pug
     include ../components/main-content/main-content.pug
@@ -30,24 +30,8 @@ html(class="no-js", lang="ru")
 
             //- Include your components here
             //- +example()
-            header-content
-                +mobile-header
-                    +nav-m
-                    +info-block
-                        +score-block-m
-                        +reg-block-m
-                +desktop-header
-                    +nav-d
-                    +info-block
-                        +score-block-d
-                        +reg-block-d
-            main-content
-                +mobile-main
-                    +main-top-m
-                    +drop-wrap-m
-                +desktop-main
-                    +main-top-d
-                    +drop-wrap-d
+            +header-content()
+            +main-content()
             .page__buffer
 
         .page__footer

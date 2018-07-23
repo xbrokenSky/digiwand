@@ -1,15 +1,16 @@
 include ../../../bemto/bemto.pug
 //- --------------------------------------actual pug starting up here
-+b.reg-block
-    +e.BUTTON#header__reg-button-mobile.reg-button.nav__list-link Вход и регистрация
-    +e#header__reg-drop-block-mobile.reg-drop-block
-        +e.FORM#header__reg-form-mobile(action='#' method='POST').reg-form
-            +e.input-block.flex-between
-                +e.LABEL(for='header__reg-mail-mobile').reg-label EMAIL:
-                +e.INPUT#header__reg-mail-mobile(type='email' form='header__reg-form-mobile' name='mail' placeholder='Введите ваш email' required).reg-input
-                +e.P#header__mail-msg-mobile.input-msg
-            +e.input-block.flex-between
-                +e.LABEL(for='header__reg-pass-mobile').reg-label Password:
-                +e.INPUT#header__reg-pass-mobile(type='password' form='header__reg-form-mobile' name='password' placeholder='Введите ваш пароль' required).reg-input
-                +e.P#header__pass-masg-mobile.input-msg
-            +e.BUTTON#header__reg-confirm-mobile.reg-confirm Войти
+mixin reg-block-m()
+    +b.reg-block
+        +e.BUTTON#header__reg-button-mobile.reg-button.nav__list-link Вход и регистрация
+        +e#header__reg-drop-block-mobile.reg-drop-block
+            +e.FORM#header__reg-form-mobile(action='#' method='POST').reg-form
+                +e.input-block.flex-between
+                    +e.LABEL(for='header__reg-mail-mobile').reg-label EMAIL:
+                    +e.INPUT#header__reg-mail-mobile(type='email' form='header__reg-form-mobile' name='mail' placeholder='Введите ваш email' required).reg-input
+                    +e.P#header__mail-msg-mobile.input-msg
+                +e.input-block.flex-between
+                    +e.LABEL(for='header__reg-pass-mobile').reg-label Password:
+                    +e.INPUT#header__reg-pass-mobile(type='password' form='header__reg-form-mobile' name='password' placeholder='Введите ваш пароль' required).reg-input
+                    +e.P#header__pass-masg-mobile.input-msg
+                +e.BUTTON#header__reg-confirm-mobile.reg-confirm Войти

@@ -1,3 +1,6 @@
 include ../../../bemto/bemto.pug
-+b.MAIN.main
+mixin main-content()
+    +b.MAIN.main
+        +mobile-main()
+        +desktop-main()
     
