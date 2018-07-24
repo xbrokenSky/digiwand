@@ -784,9 +784,9 @@ $.fn.myscroll=function(opations){var defaults={picEl:this.find("div").first(),ct
 });
 
 $(function() {
-    $('#banner-d').myscroll({
-        picEl: $('#move-d'),
-        ctrlEl: $('#ctrl-d'),
+    $('#banner-m').myscroll({
+        picEl: $('#move-m'),
+        ctrlEl: $('#ctrl-m'),
         libs: false,
         arrows: true,
         autoPlay: false,
@@ -797,9 +797,9 @@ $(function() {
     });
 })
 $(function() {
-    $('#banner-m').myscroll({
-        picEl: $('#move-m'),
-        ctrlEl: $('#ctrl-m'),
+    $('#banner-d').myscroll({
+        picEl: $('#move-d'),
+        ctrlEl: $('#ctrl-d'),
         libs: false,
         arrows: true,
         autoPlay: false,
