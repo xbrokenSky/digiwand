@@ -3,8 +3,11 @@
     width: $fullScrW;
     height: 63px;
     @media all and (min-width: 1000px) {
-        height: 40px;
+        height: $headH;
         display: flex;
         align-items: center;
+        width: $w1200;
+        margin: 0 auto;
+        padding: 0 120;
     }
 }

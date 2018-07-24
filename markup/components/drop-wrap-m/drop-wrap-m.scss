@@ -1,5 +1,9 @@
 .drop-wrap {
     margin-top: 25px;
+    @media all and (min-width: 1000px) {
+        width: $w1100;
+        margin: 30px auto;
+    }
 }
 .drop-wrap__slide-wrap {
     justify-content: center;
@@ -8,17 +12,16 @@
     height: 50vh;
     overflow: hidden;
     @media all and (min-width: 1000px) {
-        width: $mainW;
-        margin: 0 auto;
-        height: $mainH;
+        width: $w1100;
+        height: $slideH;
     }
 }
 .drop-wrap__slide-img {
     width: 100vw;
     height: 43vh;
     @media all and (min-width: 1000px) {
-        width: $mainW;
-        height: $mainH;
+        width: $w1100;
+        height: $slideH;
     }
 }
 .ctrl {

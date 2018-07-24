@@ -4,11 +4,9 @@
     @media all and (min-width: 1000px) {
         height: 80px;
         justify-content: center;
-    }
-}
-.main-top>div:not(:last-child) {
-    @media all and (min-width: 1000px) {
-        margin-right: calc((100vw - 900px) / 4.79);
+        width: $w1200;
+        margin:0 auto;
+        padding: 0 0px;
     }
 }
 .main-top__title-wrap {
@@ -29,7 +27,7 @@
     width: 75vw;
     border-radius: 1px;
     @media all and (min-width: 1000px) {
-        width: 290px;
+        width: $searchW;
     }
 }
 .main-top__search-input {
@@ -49,7 +47,8 @@
 .main-top__tab-block {
     width: $fullScrW;
     @media all and (min-width: 1000px) {
-        width: 360px;
+        width: $tabW;
+        margin:0 58px 0 60px;
     }
 }
 .main-top__tab-button {
@@ -60,8 +59,8 @@
     border-bottom: 2px solid transparent;
     border-left: 1px solid transparent;
     @media all and (min-width: 1000px) {
-        font-size: 1.03rem;
-        padding: 14px 12px 25px;
+        font-size: 1rem;
+        padding: 14px 10px 25px;
         margin-top: 18px;
     }
 }

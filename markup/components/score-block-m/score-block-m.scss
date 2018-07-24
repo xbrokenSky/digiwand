@@ -1,3 +1,11 @@
 .score-block__score-svg-wrap {
     margin-left: 5px;
+    @media all and (min-width: 1000px) {
+        margin: 0 10px 0 0;
+    }
+}
+.score-block__score-link {
+    @media all and (min-width: 1000px) {
+        margin-right: 39px;
+    }
 }
