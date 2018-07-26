@@ -8,7 +8,7 @@ var regDropStateMobile = false;
 var regConfirmBtnMobile = o('header__reg-confirm-mobile');
 
 $(regButtonMobile).click(function() {
-    $('[data-remodal-id=modal]').remodal().open();
+    $('[data-remodal-id=modal-m]').remodal().open();
 });
 
 $(regConfirmBtnMobile).click(function() {

@@ -50,7 +50,7 @@ input[type='search']::-ms-clear, input[type='email']::-ms-clear {
 }
 *::-ms-reveal {
     display: none;
- }
+}
 input::placeholder {
     opacity: 1;
     color: rgb(155, 151, 151); 
@@ -61,6 +61,15 @@ input:-ms-input-placeholder {
 }
 input:focus {
     outline: none;
+}
+input:focus::-webkit-input-placeholder{
+    color: transparent!important;
+}
+input:focus::-moz-placeholder{
+    color: transparent!important;
+}
+input:focus:-moz-placeholder{
+    color: transparent!important;
 }
 button {
     border: none;

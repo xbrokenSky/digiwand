@@ -1,7 +1,8 @@
 .drop-wrap {
     margin-top: 25px;
     @media all and (min-width: 1000px) {
-        width: $w1100;
+        max-width: $w1100;
+        min-width: $w1000;
         margin: 30px auto;
     }
 }
@@ -12,25 +13,25 @@
     height: 50vh;
     overflow: hidden;
     @media all and (min-width: 1000px) {
-        width: $w1100;
-        height: $slideH;
+        height: 450px;
     }
 }
 .drop-wrap__slide-img {
     width: 100vw;
-    height: 43vh;
+    height: 38vh;
     @media all and (min-width: 1000px) {
-        width: $w1100;
+        max-width: $w1100;
+        min-width: $w1000;
         height: $slideH;
     }
 }
 .ctrl {
     position: absolute;
     width: $fullScrW;
-    bottom: 27.5vh;
+    bottom: 34vh;
     text-align: center;
     @media all and (min-width: 1000px) {
-        bottom: 50%;
+        bottom: 60%;
     }
 }
 .ctrl .arrow {
@@ -39,16 +40,18 @@
     width: 30px;
     height: 60px;
     top: 50%;
-    margin-top: -30px;
     background-color: #333;
     cursor: pointer;
     font: 30px/58px 'Open Sans', Helvetica, sans-serif;
-    opacity: .5;
+    opacity: .55;
     color: #fff;
     text-align: center;
+    margin: 0 3%;
     @media all and (min-width: 1000px) {
         width: 60px;
         height: 62px;
+        margin: 0 5%;
+        font: 40px/68px;
     }
 }
 .drop-wrap__tab-dummy-txt {
@@ -56,6 +59,37 @@
 }
 .first-dummy-txt {
     background: $frDTxt;
+}
+.drop-wrap__slide-shadow {
+    position: absolute;
+    height: 5px;
+}
+.first-shadow {
+    top: 76%;
+    left: 0px;
+    right: 0px;
+    background: rgba(11, 30, 94, 0.836);
+    @media all and (min-width: 1000px) {
+        top: 430px;
+    }
+}
+.second-shadow {
+    top: 77%;
+    left: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.623);
+    @media all and (min-width: 1000px) {
+        top: 435px;
+    }
+}
+.third-shadow {
+    top: 78%;
+    left: 35px;
+    right: 35px;
+    background: rgba(105, 105, 105, 0.568);
+    @media all and (min-width: 1000px) {
+        top: 440px;
+    }
 }
 .second-drop-block, .third-drop-block {
     display: none;

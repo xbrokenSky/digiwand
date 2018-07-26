@@ -4,7 +4,7 @@ var regDropStateDesktop = false;
 var regConfirmBtnDesktop = o('header__reg-confirm-desktop');
 
 $(regButtonDesktop).click(function() {
-    $('[data-remodal-id=modal]').remodal().open();
+    $('[data-remodal-id=modal-d]').remodal().open();
 });
 
 $(regConfirmBtnDesktop).click(function() {

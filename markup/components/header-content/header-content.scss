@@ -5,8 +5,7 @@
     @media all and (min-width: 1000px) {
         height: $headH;
         display: flex;
-        align-items: center;
-        width: $w1200;
+        justify-content: center;
         margin: 0 auto;
         padding: 0 120;
     }

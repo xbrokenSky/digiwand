@@ -1,3 +1,11 @@
+/* JS Document 
+Version: 1.2
+CreatData:2018/7/6
+Author: MingShined
+Statement:转载请注明出处,祝大家使用愉快.有什么问题欢迎交流，个人QQ:996578843
+		  增加新参数hover 优化代码
+*/
+$.fn.myscroll=function(opations){var defaults={picEl:this.find("div").first(),ctrlEl:this.find("div").last(),libs:true,arrows:true,autoPlay:true,time:2000,effect:"left",speed:400,hover:true};var settings=$.extend(defaults,opations);var _this=this;return function(){var $timer=null;var $index=0;var $over=true;var $moveWrap=settings.picEl.find("ul");var $moveWrapChild=$moveWrap.children("li");var $moveVal=0;var $maxNum=$moveWrap.children("li").length;var $oCtrl=settings.ctrlEl;var $libsHtml="";var $arrowsHtml="";var $oLibs={};var $effect=settings.effect;var $moveArgs1={};var $moveArgs2={};var $moveArgs3={};var $autoPlay=settings.autoPlay;var $playTime=settings.time;var $playSpeed=settings.speed;var $isLibs=settings.libs;var $isArrows=settings.arrows;var $hover=settings.hover;(function(){$isLibs&&creatLibs();$isArrows&&creatArrows();$autoPlay&&autoPlay();handleEffect()})();function handleEffect(){if($effect=="left"){handleEffectEvent("width",true)}else{if($effect=="top"){handleEffectEvent("height",false)}else{$moveArgs1={"opacity":0};$moveArgs2={"opacity":1};initAllLi();picFadeChange()}}}function creatLibs(){for(var i=0;i<$maxNum;i++){$libsHtml+='<span class="libs lib'+(i+1)+'" data-value="'+i+'"></span>'}$oCtrl.append($libsHtml);$oLibs=$oCtrl.children(".libs");$oLibs.first().addClass("active")}function creatArrows(){var $arrowsHtml='<span class="arrow prev"><</span><span class="arrow next">></span>';$oCtrl.append($arrowsHtml);$hover&&_this.find(".arrow").css("display","none")}function handleEffectEvent(attr,moveAttr){$moveVal=attr==="width"?$moveWrap.children("li").find("img").width():$moveWrap.children("li").find("img").height();if(moveAttr){$moveArgs1={left:$moveVal};$moveArgs2={left:-$moveVal};$moveArgs3={left:0}}else{$moveArgs1={top:$moveVal};$moveArgs2={top:-$moveVal};$moveArgs3={top:0}}initAllLi();picMoveChange()}function initAllLi(){$moveWrapChild.each(function(index,el){if(index>0){$(el).css($moveArgs1)}})}function picMoveChange(){$oCtrl.on("click","span",function(){if($(this).attr("class")=="arrow prev"){if($over){$moveWrapChild.eq($index).stop().animate($moveArgs1,$playSpeed);--$index;$index<0?$index=$maxNum-1:$index;$moveWrapChild.eq($index).css($moveArgs2).stop().animate($moveArgs3,$playSpeed,function(){overFunc(true)});if($isLibs){libsChange($index)}}overFunc(false)}else{if($(this).attr("class")=="arrow next"){if($over){moveNext()}overFunc(false)}else{if($over){var $that=$(this).attr("data-value");if($that>$index){$moveWrapChild.eq($index).stop().animate($moveArgs2,$playSpeed);$moveWrapChild.eq($that).css($moveArgs1)}else{if($that<$index){$moveWrapChild.eq($index).stop().animate($moveArgs1,$playSpeed);$moveWrapChild.eq($that).css($moveArgs2)}}$index=$that;$moveWrapChild.eq($index).stop().animate($moveArgs3,$playSpeed,function(){overFunc(true)});if($isLibs){libsChange($index)}}overFunc(false)}}})}function picFadeChange(){$oCtrl.on("click","span",function(event){if($(this).attr("class")=="arrow prev"){if($over){$moveWrapChild.eq($index).stop().animate($moveArgs1,$playSpeed);--$index;$index<0?$index=$maxNum-1:$index;$moveWrapChild.eq($index).stop().animate($moveArgs2,$playSpeed,function(){overFunc(true)});if($isLibs){libsChange($index)}}overFunc(false)}else{if($(this).attr("class")=="arrow next"){if($over){fadeNext()}overFunc(false)}else{if($over){var $that=$(this).attr("data-value");if($that>$index){$moveWrapChild.eq($index).stop().animate($moveArgs1,$playSpeed)}else{if($that<$index){$moveWrapChild.eq($index).stop().animate($moveArgs1,$playSpeed)}}$index=$that;$moveWrapChild.eq($index).stop().animate($moveArgs2,$playSpeed,function(){overFunc(true)});if($isLibs){libsChange($index)}}overFunc(false)}}})}function autoPlay(){clearInterval($timer);$timer=setInterval(function(){if($effect=="fade"){fadeNext()}else{moveNext()}},$playTime)}_this.hover(function(){clearInterval($timer);$hover&&_this.find(".arrow").show()},function(){clearInterval($timer);if($autoPlay){autoPlay()}$hover&&_this.find(".arrow").hide()});function moveNext(){$moveWrapChild.eq($index).stop().animate($moveArgs2,$playSpeed);++$index;$index%=$maxNum;$moveWrapChild.eq($index).css($moveArgs1).stop().animate($moveArgs3,$playSpeed,function(){overFunc(true)});if($isLibs){libsChange($index)}}function fadeNext(){$moveWrapChild.eq($index).stop().animate($moveArgs1,$playSpeed);++$index;$index%=$maxNum;$moveWrapChild.eq($index).stop().animate($moveArgs2,$playSpeed,function(){overFunc(true)});if($isLibs){libsChange($index)}}function libsChange(val){$oLibs.removeClass("active").eq(val).addClass("active")}function overFunc(val){$over=val}}(jQuery)};
 !(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], function($) {
@@ -526,7 +534,7 @@
         namespacify('is', STATES.CLOSED))
       .attr('tabindex', '-1');
 
-    remodal.$wrapper = $('<div id="mod-wrapper">')
+    remodal.$wrapper = $('<div>')
       .addClass(
         namespacify('wrapper') + ' ' +
         remodal.settings.modifier + ' ' +
@@ -739,10 +747,11 @@
     // data-remodal-target opens a modal window with the special Id
     $(document).on('click', '[data-' + PLUGIN_NAME + '-target]', function(e) {
       e.preventDefault();
+
       var elem = e.currentTarget;
       var id = elem.getAttribute('data-' + PLUGIN_NAME + '-target');
       var $target = $('[data-' + PLUGIN_NAME + '-id="' + id + '"]');
-      
+
       $[PLUGIN_NAME].lookup[$target.data(PLUGIN_NAME)].open();
     });
 
@@ -772,4 +781,257 @@
     // Handles the hashchange event
     $(window).on('hashchange.' + NAMESPACE, handleHashChangeEvent);
   });
+});
+
+$(function() {
+    $('#banner-d').myscroll({
+        picEl: $('#move-d'),
+        ctrlEl: $('#ctrl-d'),
+        libs: false,
+        arrows: true,
+        autoPlay: false,
+        time: 1000,
+        speed: 400,
+        effect: '',
+        hover: false
+    });
+})
+$(function() {
+    $('#banner-m').myscroll({
+        picEl: $('#move-m'),
+        ctrlEl: $('#ctrl-m'),
+        libs: false,
+        arrows: true,
+        autoPlay: false,
+        time: 1000,
+        speed: 400,
+        effect: '',
+        hover: false
+    });
+})
+var tabFButtonDesktop = o('main-top__tab-button-f-desktop');
+var tabFDropBlockDesktop = o('drop-wrap__tab-drob-block-f-desktop');
+var tabFDropStateDesktop = true;
+var tabSButtonDesktop = o('main-top__tab-button-s-desktop');
+var tabSDropBlockDesktop = o('drop-wrap__tab-drob-block-s-desktop');
+var tabSDropStateDesktop = false;
+var tabTButtonDesktop = o('main-top__tab-button-t-desktop');
+var tabTDropBlockDesktop = o('drop-wrap__tab-drob-block-t-desktop');
+var tabTDropStateDesktop = false;
+
+tabFButtonDesktop.onclick = function(e) {
+    e.stopPropagation();
+    if (!tabFDropStateDesktop) {
+        tabFButtonDesktop.classList.add('active-tab-button');
+        tabFDropBlockDesktop.style.display = 'block';
+        tabFDropStateDesktop = true;
+        tabSButtonDesktop.classList.remove('active-tab-button');
+        tabSDropBlockDesktop.style.display = 'none';
+        tabSDropStateDesktop = false;
+        tabTButtonDesktop.classList.remove('active-tab-button');
+        tabTDropBlockDesktop.style.display = 'none';
+        tabTDropStateDesktop = false;
+    } else {
+        return false;
+    }
+};
+
+tabSButtonDesktop.onclick = function(e) {
+    e.stopPropagation();
+    if (!tabSDropStateDesktop) {
+        tabSButtonDesktop.classList.add('active-tab-button');
+        tabSDropBlockDesktop.style.display = 'block';
+        tabSDropStateDesktop = true;
+        tabFButtonDesktop.classList.remove('active-tab-button');
+        tabFDropBlockDesktop.style.display = 'none';
+        tabFDropStateDesktop = false;
+        tabTButtonDesktop.classList.remove('active-tab-button');
+        tabTDropBlockDesktop.style.display = 'none';
+        tabTDropStateDesktop = false;
+    } else {
+        tabSButtonDesktop.classList.remove('active-tab-button');
+        tabSDropBlockDesktop.style.display = 'none';
+        tabSDropStateDesktop = false;
+        tabFButtonDesktop.classList.add('active-tab-button');
+        tabFDropBlockDesktop.style.display = 'block';
+        tabFDropStateDesktop = true;
+    }
+    return false;
+};
+
+tabTButtonDesktop.onclick = function(e) {
+    e.stopPropagation();
+    if (!tabTDropStateDesktop) {
+        tabTButtonDesktop.classList.add('active-tab-button');
+        tabTDropBlockDesktop.style.display = 'block';
+        tabTDropStateDesktop = true;
+        tabFButtonDesktop.classList.remove('active-tab-button');
+        tabFDropBlockDesktop.style.display = 'none';
+        tabFDropStateDesktop = false;
+        tabSButtonDesktop.classList.remove('active-tab-button');
+        tabSDropBlockDesktop.style.display = 'none';
+        tabSDropStateDesktop = false;
+    } else {
+        tabTButtonDesktop.classList.remove('active-tab-button');
+        tabTDropBlockDesktop.style.display = 'none';
+        tabTDropStateDesktop = false;
+        tabFButtonDesktop.classList.add('active-tab-button');
+        tabFDropBlockDesktop.style.display = 'block';
+        tabFDropStateDesktop = true;
+    }
+    return false;
+};
+var tabFButtonMobile = o('main-top__tab-button-f-mobile');
+var tabFDropBlockMobile = o('drop-wrap__tab-drob-block-f-mobile');
+var tabFDropStateMobile = true;
+var tabSButtonMobile = o('main-top__tab-button-s-mobile');
+var tabSDropBlockMobile = o('drop-wrap__tab-drob-block-s-mobile');
+var tabSDropStateMobile = false;
+var tabTButtonMobile = o('main-top__tab-button-t-mobile');
+var tabTDropBlockMobile = o('drop-wrap__tab-drob-block-t-mobile');
+var tabTDropStateMobile = false;
+
+tabFButtonMobile.onclick = function(e) {
+    e.stopPropagation();
+    if (!tabFDropStateMobile) {
+        tabFButtonMobile.classList.add('active-tab-button');
+        tabFDropBlockMobile.style.display = 'block';
+        tabFDropStateMobile = true;
+        tabSButtonMobile.classList.remove('active-tab-button');
+        tabSDropBlockMobile.style.display = 'none';
+        tabSDropStateMobile = false;
+        tabTButtonMobile.classList.remove('active-tab-button');
+        tabTDropBlockMobile.style.display = 'none';
+        tabTDropStateMobile = false;
+    } else {
+        return false;
+    }
+};
+
+tabSButtonMobile.onclick = function(e) {
+    e.stopPropagation();
+    if (!tabSDropStateMobile) {
+        tabSButtonMobile.classList.add('active-tab-button');
+        tabSDropBlockMobile.style.display = 'block';
+        tabSDropStateMobile = true;
+        tabFButtonMobile.classList.remove('active-tab-button');
+        tabFDropBlockMobile.style.display = 'none';
+        tabFDropStateMobile = false;
+        tabTButtonMobile.classList.remove('active-tab-button');
+        tabTDropBlockMobile.style.display = 'none';
+        tabTDropStateMobile = false;
+    } else {
+        tabSButtonMobile.classList.remove('active-tab-button');
+        tabSDropBlockMobile.style.display = 'none';
+        tabSDropStateMobile = false;
+        tabFButtonMobile.classList.add('active-tab-button');
+        tabFDropBlockMobile.style.display = 'block';
+        tabFDropStateMobile = true;
+    }
+    return false;
+};
+
+tabTButtonMobile.onclick = function(e) {
+    e.stopPropagation();
+    if (!tabTDropStateMobile) {
+        tabTButtonMobile.classList.add('active-tab-button');
+        tabTDropBlockMobile.style.display = 'block';
+        tabTDropStateMobile = true;
+        tabFButtonMobile.classList.remove('active-tab-button');
+        tabFDropBlockMobile.style.display = 'none';
+        tabFDropStateMobile = false;
+        tabSButtonMobile.classList.remove('active-tab-button');
+        tabSDropBlockMobile.style.display = 'none';
+        tabSDropStateMobile = false;
+    } else {
+        tabTButtonMobile.classList.remove('active-tab-button');
+        tabTDropBlockMobile.style.display = 'none';
+        tabTDropStateMobile = false;
+        tabFButtonMobile.classList.add('active-tab-button');
+        tabFDropBlockMobile.style.display = 'block';
+        tabFDropStateMobile = true;
+    }
+    return false;
+};
+var regButtonDesktop = o('header__reg-button-desktop');
+var regDropBlockDesktop = o('header__reg-drop-block-desktop');
+var regDropStateDesktop = false;
+var regConfirmBtnDesktop = o('header__reg-confirm-desktop');
+
+$(regButtonDesktop).click(function() {
+    $('[data-remodal-id=modal]').remodal().open();
+});
+
+$(regConfirmBtnDesktop).click(function() {
+    $('#header__reg-form-desktop').validate({
+        rules: {
+            mail: {
+                required: true,
+                minlength: 5,
+                maxlength: 16,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 8,
+                maxlength: 16,
+            }
+        },
+        messages: {
+            mail: {
+                required: "Это поле обязательно для заполнения",
+                minlength: "Логин должен быть минимум 5 символов",
+                maxlength: "Максимальное число символов - 16",
+                email: "Введите корректный адрес электронной почты"
+            },
+            password: {
+                required: "Это поле обязательно для заполнения",
+                minlength: "Логин должен быть минимум 8 символов",
+                maxlength: "Максимальное число символов - 16",
+            }
+        }
+    });
+});
+function o(id) {
+    return document.getElementById(id);
+}
+
+var regButtonMobile = o('header__reg-button-mobile');
+var regDropBlockMobile = o('header__reg-drop-block-mobile');
+var regDropStateMobile = false;
+var regConfirmBtnMobile = o('header__reg-confirm-mobile');
+
+$(regButtonMobile).click(function() {
+    $('[data-remodal-id=modal]').remodal().open();
+});
+
+$(regConfirmBtnMobile).click(function() {
+    $('#header__reg-form-mobile').validate({
+        rules: {
+            mail: {
+                required: true,
+                minlength: 5,
+                maxlength: 16,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 8,
+                maxlength: 16,
+            }
+        },
+        messages: {
+            mail: {
+                required: "Это поле обязательно для заполнения",
+                minlength: "Логин должен быть минимум 5 символов",
+                maxlength: "Максимальное число символов - 16",
+                email: "Введите корректный адрес электронной почты"
+            },
+            password: {
+                required: "Это поле обязательно для заполнения",
+                minlength: "Логин должен быть минимум 8 символов",
+                maxlength: "Максимальное число символов - 16",
+            }
+        }
+    });
 });

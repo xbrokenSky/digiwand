@@ -1,12 +1,17 @@
 .main-top {
     border-bottom: 1px solid $mTopBord;
     width: $fullScrW;
+    justify-content: center;
     @media all and (min-width: 1000px) {
         height: 80px;
-        justify-content: center;
-        width: $w1200;
         margin:0 auto;
         padding: 0 0px;
+    }
+}
+.main-top__wrapper {
+    @media all and (min-width: 1000px) {
+        width: $w1200;
+        justify-content: center;
     }
 }
 .main-top__title-wrap {
@@ -32,11 +37,11 @@
 }
 .main-top__search-input {
     border: none;
-    height: 32px;
-    text-indent: 5px;
-    @media all and (min-width: 1000px) {
-        height: 30px;
-    }
+    height: 30px;
+    text-indent: 7px;
+    font-size: 14px;
+    letter-spacing: -.1px;
+    width: 93%;
 }
 .main-top__search-span {
     margin-right: 5px;
@@ -46,20 +51,20 @@
 }
 .main-top__tab-block {
     width: $fullScrW;
+    justify-content: center;
     @media all and (min-width: 1000px) {
         width: $tabW;
-        margin:0 39px 0 77px;
+        margin:0 42px 0 77px;
     }
 }
 .main-top__tab-button {
-    font-size: .95rem;
+    font-size: .94rem;
     padding: 10px 5px 10px;
     border-top: 2px solid transparent;
     border-right: 1px solid transparent;
     border-bottom: 2px solid transparent;
     border-left: 1px solid transparent;
     @media all and (min-width: 1000px) {
-        font-size: 1rem;
         padding: 14px 12px 25px;
         margin-top: 18px;
     }
@@ -73,6 +78,6 @@
     margin-bottom: -1px;
     padding-bottom: 11px;
     @media all and (min-width: 1000px) {
-        padding-bottom: 26px;
+        padding-bottom: 27px;
     }
 }
